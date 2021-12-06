@@ -1,8 +1,7 @@
 import Header from './components/header/header.component';
-import { Switch, Route } from 'react-router-dom';
 import React, { useState, useContext, createContext } from 'react';
 import './App.css';
-
+import { HashRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/home/home';
 import Men from './pages/men/Men';
 import Women from './pages/women/Women';
@@ -19,7 +18,6 @@ function App() {
 		<div>
 			<RouteContext.Provider value={{ ruta, setRuta, sneakerData, setSneakerData }}>
 				<Header />
-
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/men" component={Men} />
