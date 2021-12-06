@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import Header from './components/header/header.component';
+import { Switch, Route } from 'react-router-dom';
+import React, { useState, useContext, createContext } from 'react';
 import './App.css';
 
+import Home from './pages/home/home';
+import Men from './pages/men/Men';
+import Women from './pages/women/Women';
+import Footer from './components/footer/footer.component';
+import ItemImage from './components/item-image/item-image.component';
+import ItemPage from './pages/item-page/item-page.component';
+
+export const RouteContext = createContext();
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [ ruta, setRuta ] = useState('/');
+	const [ sneakerData, setSneakerData ] = useState({});
+	return (
+		<div>
+			<RouteContext.Provider value={{ ruta, setRuta, sneakerData, setSneakerData }}>
+				<Header />
+
+				<Switch>
+					<Route exact path="/" component={Home} />
+					<Route path="/men" component={Men} />
+					<Route path="/women" component={Women} />
+					<Route path={`/${ruta}`} component={ItemPage} />
+				</Switch>
+			</RouteContext.Provider>
+		</div>
+	);
 }
 
 export default App;
