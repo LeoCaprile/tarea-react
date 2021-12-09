@@ -6,12 +6,12 @@ import './cart.styles.scss'
 
 const Cart = () => {
 const [showItems, setShowItems] = useState(false)
-const {cart} = useContext(RouteContext);
+const {cart,total} = useContext(RouteContext);
 
     return (
     <div className="cart">
     <img onClick={()=>{if(showItems){setShowItems(false)}else{setShowItems(true)}}} src={CartImg} alt='cart' className='cart'/>
-    <div className="counter">1</div>
+    {(total.totalCant>9)?(<div className="counter">9+</div>):(total.totalCant>0)?(<div className="counter">{total.totalCant}</div>):null}
     {showItems?<CartItems/>:null}
     </div>)
 }
