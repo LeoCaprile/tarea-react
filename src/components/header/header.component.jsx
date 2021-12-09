@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import Avatar from '../../images/image-avatar.png'
 import './header.styles.scss'
 import Logo from '../../images/logo.svg'
-import Cart from '../../images/icon-cart.svg'
+import Cart from '../cart/cart.component'
 
 
 
@@ -24,8 +24,9 @@ const Header = () => {
             <Link className='link' to='/about'>About</Link>
             <Link className='link' to='/contact'>Contact</Link>
             
-            <img src={Cart} className='cart'></img>
-            <img src={Avatar} className="profile-picture"/>
+            <Cart />
+            <img src={Avatar} alt='avatar' className="profile-picture"/>
+           
         </div>
         
     )

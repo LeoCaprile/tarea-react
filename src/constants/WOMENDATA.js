@@ -5,7 +5,7 @@ export const WOMENDATA = {
 			brand: 'Jordan',
 			colorway: 'Atmosphere/White-Laser Pink-Obsidian',
 			gender: 'women',
-			name: 'Atmosphere (W)',
+			name: 'Atmosphere',
 			releaseDate: '2021-12-22',
 			retailPrice: 190,
 			shoe: 'Jordan 1 Retro High OG',

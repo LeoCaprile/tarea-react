@@ -1,15 +1,14 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,useRouteMatch } from 'react-router-dom'
 import './item-image.styles.scss'
 
-const ItemImage = ({name,media,retailPrice,onClick}) => {
-
+const ItemImage = ({name,id,media,retailPrice,onClick}) => {
 
     return (
   
-           <Link to={`/${name}`} onClick={onClick} className="item-container">
+           <Link key={id} to={`/${id}`} onClick={onClick} className="item-container">
                 <img src={media.thumbUrl} alt={name}></img>
-                <span className="price">${retailPrice==0?'100':retailPrice}</span>
+                <span className="price">${retailPrice===0?'100':retailPrice}</span>
             </Link>
    
     )

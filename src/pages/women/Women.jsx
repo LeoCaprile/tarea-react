@@ -7,17 +7,18 @@ import './Women.styles.scss'
 
 
 const Women = () => {
-    const [data, setData] = useState(WOMENDATA.results)
-    const {ruta,setRuta} = useContext(RouteContext);
+    const [data] = useState(WOMENDATA.results)
+    const {setRuta,setSneakerData} = useContext(RouteContext);
 
     return (
         
         <div>
-            <h1 className="title">Men</h1>
+            <h1 className="title">Women</h1>
             <div className="items-container">
 
-                {data.map(({name,...otherItemImagesProps})=><ItemImage name={name} {...otherItemImagesProps} 
-                onClick={()=>{setRuta(`${name}`)}}></ItemImage>)}
+                {data.map(({name,id,...otherItemImagesProps})=><ItemImage id={id} name={name} {...otherItemImagesProps} 
+                onClick={()=>{setRuta(`${id}`);
+                setSneakerData({name,...otherItemImagesProps})}}></ItemImage>)}
        
             </div>
             

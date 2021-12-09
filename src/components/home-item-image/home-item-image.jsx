@@ -4,7 +4,7 @@ import MENDATA from '../../constants/MENDATA'
 
 const HomeItemImage = () => {
 
-    const [data, setData] = useState(MENDATA.results)
+    const [data] = useState(MENDATA.results)
     const [num, setNum] = useState(0)
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const HomeItemImage = () => {
     const randomSneakerImage = (num) => data[num].media.smallImageUrl;
 
 
-return (<img src={randomSneakerImage(num)} alt="" />)
+return (<img src={randomSneakerImage(num)} alt='Sneakers' />)
 
 
 }
